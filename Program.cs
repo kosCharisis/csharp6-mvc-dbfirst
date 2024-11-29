@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolApp.Data;
+
 namespace SchoolApp
 {
     public class Program
@@ -5,6 +8,11 @@ namespace SchoolApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // AddDbcontext is scoped - per request a new instance of dbcontext is created
+            builder.Services.AddDbContext<Mvc6DbContext>(options => options.UseSqlServer(connString));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

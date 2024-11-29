@@ -103,7 +103,7 @@ public partial class Mvc6DbContext : DbContext
             entity.Property(e => e.Firstname).HasMaxLength(50);
             entity.Property(e => e.Lastname).HasMaxLength(50);
             entity.Property(e => e.Password).HasMaxLength(60);
-            entity.Property(e => e.UserRole).HasMaxLength(50);
+            entity.Property(e => e.UserRole).HasConversion<string>().HasMaxLength(50);
             entity.Property(e => e.Username).HasMaxLength(50);
         });
 
