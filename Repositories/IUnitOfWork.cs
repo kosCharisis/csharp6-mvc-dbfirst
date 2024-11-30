@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork
     {
-        //UserRepository
+        UserRepository UserRepository { get; }
         TeacherRepository TeacherRepository { get; }
         StudentRepository StudentRepository { get; }
         CourseRepository CourseRepository { get; }

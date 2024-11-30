@@ -17,7 +17,8 @@ namespace SchoolApp.Repositories
             EncryprionUtil.IsValidPassword(password, u.Password));
         }
 
-        public async Task<List<User>> GetAllUsersFilteredPaginatedAsync(int pageNumber, int pageSize, List<Func<User, bool>> predicates)
+        public async Task<List<User>> GetAllUsersFilteredPaginatedAsync(int pageNumber, int pageSize, 
+            List<Func<User, bool>> predicates)
         {
             int skip = (pageNumber - 1) * pageSize;
             IQueryable<User> query = context.Users.Skip(skip).Take(pageSize);
