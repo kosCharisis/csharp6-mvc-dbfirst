@@ -15,6 +15,7 @@ namespace SchoolApp
             // AddDbcontext is scoped - per request a new instance of dbcontext is created
             builder.Services.AddDbContext<Mvc6DbContext>(options => options.UseSqlServer(connString));
             builder.Services.AddRepositories();
+            
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
