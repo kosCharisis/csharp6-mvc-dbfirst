@@ -4,7 +4,7 @@ using SchoolApp.Data;
 
 namespace SchoolApp.Repositories
 {
-    public class StudentRepository : BaseRepository<StudentRepository>, IStudentRepository
+    public class StudentRepository : BaseRepository<Student>, IStudentRepository
     {
         public StudentRepository(Mvc6DbContext context) 
             : base(context)

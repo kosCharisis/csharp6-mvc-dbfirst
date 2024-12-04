@@ -11,6 +11,6 @@ namespace SchoolApp.DTO
             ErrorMessage = "Password must contain at least one uppercase, one lowercase, " + 
             "one digit and one special character")]
         public string? Password { get; set; }
-        public bool KeooLoggedIn { get; set; }
+        public bool KeepLoggedIn { get; set; }
     }
 }

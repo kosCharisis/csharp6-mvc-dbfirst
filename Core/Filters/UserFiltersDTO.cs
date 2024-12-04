@@ -4,6 +4,6 @@
     {
         public string? Username { get; set; }
         public string? Email { get; set; }
-        public string? userRole {  get; set; }
+        public string? UserRole {  get; set; }
     }
 }
