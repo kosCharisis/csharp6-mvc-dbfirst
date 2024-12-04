@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolApp.DTO
 {
-    public class TeacherSignuUpDTO // μπορουμε διαφορετική φόρμα για κάθε actor signup
+    public class TeacherSignUpDTO // μπορουμε διαφορετική φόρμα για κάθε actor signup
     {
         [StringLength( 50, MinimumLength = 2, ErrorMessage = "Username must be between 2 and 50 characters")]
         public string? Username { get; set; }

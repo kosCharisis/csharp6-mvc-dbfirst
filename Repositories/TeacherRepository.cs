@@ -12,9 +12,11 @@ namespace SchoolApp.Repositories
         {
         }
 
-        public async Task<Teacher?> GetByPhoneNumberAsync(string phoneNumber)
+        public async Task<Teacher?> GetByPhoneNumberAsync(string? phoneNumber)
         {
-            return await context.Teachers.Where(t => t.PhoneNumber == phoneNumber).FirstOrDefaultAsync();
+            return await context.Teachers
+                .Where(t => t.PhoneNumber == phoneNumber)
+                .FirstOrDefaultAsync();
         }
 
         public async Task<List<Course>> GetTeacherCoursesAsync(int id)
@@ -29,7 +31,7 @@ namespace SchoolApp.Repositories
             return courses;
         }
 
-        public async Task<List<User>> GetAllUsersTeacherAsync()
+        public async Task<List<User>> GetAllUsersTeachersAsync()
         {
             var usersWithTeacherRole = await context.Users
                 .Where(u => u.UserRole == UserRole.Teacher)
