@@ -30,7 +30,7 @@ namespace SchoolApp.Controllers
             {
                 return View();
             }
-            return RedirectToAction("Index", "User");  //Dashboard
+            return RedirectToAction("Index", "User");       // Dashboard
         }
 
         [HttpPost]
@@ -59,7 +59,7 @@ namespace SchoolApp.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(identity), properties);
 
-            return RedirectToAction("Index", "User"); //to Dashboard
+            return RedirectToAction("Index", "User");
         }
 
         [HttpGet]
@@ -68,5 +68,6 @@ namespace SchoolApp.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "User");
         }
+
     }
 }

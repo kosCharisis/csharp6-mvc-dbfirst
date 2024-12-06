@@ -1,6 +1,6 @@
 ﻿namespace SchoolApp.Security
 {
-    public class EncryprionUtil
+    public class EncryptionUtil
     {
         public static string Encrypt(string plainText)
         {

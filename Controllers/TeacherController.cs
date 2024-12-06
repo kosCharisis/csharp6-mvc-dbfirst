@@ -17,30 +17,35 @@ namespace SchoolApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp()
-        {
-            return View();
-        }
-
-        [HttpGet]
         [Authorize(Roles = "Teacher")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> SignUp(TeacherSignUpDTO teacherSignUpDTO)
+        [HttpGet]
+        public IActionResult SignUp()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Signup(TeacherSignUpDTO teacherSignUpDTO)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    foreach (var entry in ModelState.Values)
+            //    {
+            //        foreach (var error in entry.Errors)
+            //        {
+            //            ErrorArray.Add(new Error("", error.ErrorMessage, ""));
+            //            ViewData["ErrorArray"] = ErrorArray;
+            //        }
+            //    }
+            //    return View(teacherSignupDTO);
+            //}
             if (!ModelState.IsValid)
             {
-                foreach (var entry in ModelState.Values)
-                {
-                    foreach (var error in entry.Errors)
-                    {
-                        ErrorArray.Add(new Error("", error.ErrorMessage, ""));
-                    }
-                }
                 return View(teacherSignUpDTO);
             }
 

@@ -10,6 +10,5 @@ public partial class Course
     public int? TeacherId { get; set; }
 
     public virtual Teacher? Teacher { get; set; }
-
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 }

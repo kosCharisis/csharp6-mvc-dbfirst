@@ -3,6 +3,7 @@ using SchoolApp.Core.Filters;
 using SchoolApp.Data;
 using SchoolApp.DTO;
 using SchoolApp.Repositories;
+using Serilog;
 
 namespace SchoolApp.Services
 {
@@ -12,11 +13,11 @@ namespace SchoolApp.Services
         private readonly IMapper _mapper;
         private readonly ILogger<UserService> _logger;
 
-        public UserService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<UserService> logger)
+        public UserService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _logger = logger;
+            _logger = new LoggerFactory().AddSerilog().CreateLogger<UserService>();
         }
 
         public async Task<List<User>> GetAllUsersFiltered(int pageNumber, int pageSize,

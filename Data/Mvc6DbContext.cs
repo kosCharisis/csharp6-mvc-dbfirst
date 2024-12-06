@@ -25,9 +25,7 @@ public partial class Mvc6DbContext : DbContext
         modelBuilder.Entity<Course>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Courses__3214EC0727AF97D1");
-
             entity.HasIndex(e => e.Description, "IX_Courses_Description");
-
             entity.Property(e => e.Description).HasMaxLength(50);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Courses)
@@ -78,11 +76,8 @@ public partial class Mvc6DbContext : DbContext
         modelBuilder.Entity<Teacher>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Teachers__3214EC07FE6B468B");
-
             entity.HasIndex(e => e.Institution, "IX_Teachers_Institution");
-
             entity.HasIndex(e => e.UserId, "IX_Teachers_UserId").IsUnique();
-
             entity.Property(e => e.Institution).HasMaxLength(50);
             entity.Property(e => e.PhoneNumber).HasMaxLength(20);
 
@@ -94,9 +89,7 @@ public partial class Mvc6DbContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07ACE2DBFD");
-
             entity.HasIndex(e => e.Email, "IX_Users_Email").IsUnique();
-
             entity.HasIndex(e => e.Username, "IX_Users_Username").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(50);
